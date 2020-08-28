@@ -1,4 +1,6 @@
-This project was bootstrapped with [React Todo]("https://mdrkarimi20.github.io/React-Todo").
+This project was bootstrapped with [React Todo].
+
+https://mdrkarimi20.github.io/React-Todo
 
 ## Available Scripts
 
