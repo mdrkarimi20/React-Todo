@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Container from "@material-ui/core/Container";
+import { ThemeProvider } from "@material-ui/core/styles";
+import Header from "./Components/Header/Header";
+import Start from "./Containers/Start/Start";
+import NewFrom from "./Containers/NewFrom/NewForm";
+import EditForm from "./Containers/EditForm/EditForm";
+import theme from "./themes/theme";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+   return (
+    <ThemeProvider theme={theme}>
+      <Container data-aos="fade-left">
+        <Header data-aos="fade-right"/>
+        <Switch>
+          <Route exact path="/" component={Start} />
+          <Route path="/add" component={NewFrom} />
+          <Route exact path="/update/:listId" component={EditForm} />
+          <Redirect to="/" />
+        </Switch>
+      </Container>
+    </ThemeProvider>
   );
 }
 
